@@ -5,7 +5,7 @@
 
 
 2. Comentar com suas palavras o segundo trecho do livro Software Engineering at Google, Oreilly.
+      Um ponto importante a se pensar é como o software se comporta ao longo do tempo e por quanto tempo ele se mantém operacional. Engenharia de Software é uma área que está em constante evolução e seus processos se tornam obsoletos com muita rapidez. Outra preocupação é em como o código se comporta para diferentes números de acessos. "Meu programa funciona com 100 pessoas usando? E com 1 milhão?". Algumas questões precisam ser levadas em consideração no processo de desenvolvimento de um software para tentar retardar essa obsolência e tornar os programas resilientes e escaláveis. Entre elas estão o desgaste pelo tempo, questões de adaptabilidade, escalabilidade, tolerância a falhas, 
 
 
-
-4. Listar e explicar 3 exemplos de tradeoffs
+3. Listar e explicar 3 exemplos de tradeoffs
