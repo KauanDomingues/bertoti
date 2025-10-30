@@ -174,3 +174,116 @@
 <img src="image-1.png" alt="teste comprovado">
 
 </div>
+
+<h style="background-color: rgba(22, 44, 37, 1); padding: 10px; z-index: -1; border-radius: 20px; border: 2px solid rgba(0, 236, 146, 1); border-bottom: none; margin-left: 20px;">
+7. Diagrama de Classes UML
+</h>
+<div style="background-color: rgba(22, 44, 37, 1); padding: 10px; border: 2px solid rgba(0, 236, 146, 1); border-radius: 10px; margin-bottom: 30px">
+      <img src="image-2.png" alt="lista-de-tarefas"style="filter: invert(1);">
+</div>
+
+
+<h style="background-color: rgba(22, 44, 37, 1); padding: 10px; z-index: -1; border-radius: 20px; border: 2px solid rgba(0, 236, 146, 1); border-bottom: none; margin-left: 20px;">
+8. Java
+</h>
+<div style="background-color: rgba(22, 44, 37, 1); padding: 35px; border: 2px solid rgba(0, 236, 146, 1); border-radius: 10px; margin-bottom: 30px; overflow-x: auto;">
+
+<div style="width: 70vw;">
+
+      public class Atividade {
+            private int id;
+            private String text;
+            private boolean concluida;
+
+            public int getId() {return id;}
+            public void setId(int id) {this.id = id;}
+
+            public String getText() {return text;}
+            public void setText(String text) {this.text = text;}
+
+            public boolean getConcluida() {return concluida;}
+            public void setConcluida(boolean concluida) {this.concluida = concluida;}
+
+            public Atividade(String text){this.text=text;}
+
+            public void concluir(){
+                  setConcluida(true);
+            }
+      }
+</div>
+
+
+<div style="width: 70vw;">    
+
+      import java.util.ArrayList;
+      import java.util.List;
+
+      public class ListaAFazer {
+            private int id;
+            private String nome;
+            private List<Atividade> atividades = new ArrayList<>();
+
+            public int getId() {return id;    }
+            public void setId(int id) {this.id = id;}
+
+            public String getNome() {return nome;}
+            public void setNome(String nome) {this.nome = nome;}
+
+            public List<Atividade> getAtividades() {return atividades;}
+            public void setAtividades(List<Atividade> atividades) {this.atividades = atividades;}
+
+            public ListaAFazer(String nome){
+                  this.nome = nome;
+            }
+
+            public void adicionarAtividade(Atividade atividade){
+                  atividades.add(atividade);
+            }
+
+            public int contarAtividadeConcluidas(){
+                  int count = 0;
+                  for(Atividade atividade : atividades) {
+                        if(atividade.getConcluida()) count++;
+                  }
+                  return count;
+            }
+      }
+
+</div>
+</div>
+</div>
+</div>
+
+<h style="background-color: rgba(22, 44, 37, 1); padding: 10px; z-index: -1; border-radius: 20px; border: 2px solid rgba(0, 236, 146, 1); border-bottom: none; margin-left: 20px;">
+9.Testes Automatizados
+</h>
+<div style="background-color: rgba(22, 44, 37, 1); padding: 30px; border: 2px solid rgba(0, 236, 146, 1); border-radius: 10px; margin-bottom: 30px">
+
+<div>
+
+      import org.junit.Test;
+      import static org.junit.jupiter.api.Assertions.assertEquals;
+
+      public class test {
+      @Test
+      public void test(){
+            ListaAFazer lista = new ListaAFazer("Para hoje");
+
+            Atividade atividade = new Atividade("Ir ao mercado");
+            Atividade atividade2 = new Atividade("Ler um livro");
+            Atividade atividade3 = new Atividade("Comprar uma casa");
+
+            lista.adicionarAtividade(atividade);
+            lista.adicionarAtividade(atividade2);
+            lista.adicionarAtividade(atividade3);
+
+            atividade2.concluir();
+
+            assertEquals(1, lista.contarAtividadeConcluidas());
+      }
+      }
+</div>
+
+<img src="image-3.png" alt="teste comprovado">
+
+</div>
